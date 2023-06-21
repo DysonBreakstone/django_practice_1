@@ -1,6 +1,10 @@
 from django.db import models
 
 # Create your models here.
+
+# To modify database once models are created, run "python3 manage.py makemigrations #{name of app}"
+# Then: python3 manage.py migrate to run migrations
+
 class ToDoList(models.Model):
   name = models.CharField(max_length=200)
 
@@ -9,8 +13,9 @@ class ToDoList(models.Model):
 
 class Item(models.Model):
   todolist = models.ForeignKey(ToDoList, on_delete=models.CASCADE)
-  text = models.Charfield(max_Length=300)
+  text = models.CharField(max_length=300)
   complete = models.BooleanField()
 
   def __str__(self):
     return self.text
+
