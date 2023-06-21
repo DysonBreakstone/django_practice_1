@@ -5,6 +5,7 @@ from .models import ToDoList, Item
 
 def index(response, id):
   ls = ToDoList.objects.get(id=id)
-  item = ls.item_set.first()
-  # import ipdb; ipdb.set_trace()
-  return HttpResponse("<h1>%s</h1><br/><p>%s</p>" % (ls.name, item.text()))
+  return render(response, "app_name/base.html", {"name":ls.name})
+
+def home(response):
+  return render(response, "app_name/home.html", {"name":"Name"})

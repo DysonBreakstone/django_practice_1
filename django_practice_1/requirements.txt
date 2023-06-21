@@ -1,4 +1,0 @@
-To use ipdb (which is like Ruby's 'pry'), insert the following line:
-
-import ipdb; ipdb.set_trace()
-type c to continue execution of the code (like 'exit' for pry)
