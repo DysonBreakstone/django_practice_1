@@ -1,10 +1,14 @@
 <html>
   <head>
     <title>
-      Dyson's Website
+      {% block title %}
+      {% endblock %}
     </title>
   </head>
   <body>
-    <p>{{name}}</p>
+    <div id="content", name="content">
+      {% block content %}
+      {% endblock %}
+    </div>
   </body>
 </html>
